@@ -4,8 +4,8 @@ export default function Header() {
   return (
     <header
       style={{
-        backgroundColor: "#1e1e1e", 
-        color: "#e13838", 
+        backgroundColor: "#1e1e1e",
+        color: "#e13838",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -16,19 +16,19 @@ export default function Header() {
         boxShadow: "0 2px 6px rgba(0,0,0,0.4)",
       }}
     >
-      {}
+      { }
       <h1 style={{ margin: 0, fontSize: "25px", fontWeight: "bold", marginLeft: "280px" }}>
         Cristian Ezequiel Heredia
       </h1>
 
-      {}
+      { }
       <nav style={{ display: "flex", gap: "30px" }}>
         <a href="#about" style={linkStyle}>Inicio</a>
         <a href="#projects" style={linkStyle}>Proyectos</a>
         <a href="#contact" style={linkStyle}>Contacto</a>
       </nav>
 
-      {}
+      { }
       <div style={{ display: "flex", gap: "20px" }}>
         <a
           href="https://www.linkedin.com/in/cristian-ezequiel-heredia-21b032230/"
@@ -46,7 +46,7 @@ export default function Header() {
 }
 
 const linkStyle = {
-  color: "#e13838", 
+  color: "#e13838",
   textDecoration: "none",
   fontSize: "18px",
   fontWeight: "bold",

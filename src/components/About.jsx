@@ -5,8 +5,8 @@ export default function About() {
     <section
       id="about"
       style={{
-        backgroundColor: "#1e1e1e", // fondo gris oscuro
-        color: "#e13838", // texto rojo
+        backgroundColor: "#1e1e1e",
+        color: "#e13838",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -16,7 +16,7 @@ export default function About() {
         width: "100%",
       }}
     >
-      {/* Texto */}
+      { }
       <div
         style={{
           maxWidth: "650px",
@@ -68,7 +68,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Foto + íconos */}
+      { }
       <div
         style={{
           display: "flex",
@@ -81,17 +81,17 @@ export default function About() {
           src="/fotoPerfil.png"
           alt="Foto de perfil"
           style={{
-            objectFit: "cover",        // evita deformación
+            objectFit: "cover",
             objectPosition: "center",
             width: "320px",
             borderRadius: "150px",
             objectFit: "cover",
-            border: "0.5px solid #e13838", // borde rojo para resaltar
+            border: "0.5px solid #e13838",
             marginRight: "25px"
           }}
         />
 
-        {/* Íconos */}
+        { }
         <div style={{ display: "flex", gap: "20px" }}>
           <a
             href="https://www.linkedin.com/in/cristian-ezequiel-heredia-21b032230/"
@@ -104,25 +104,25 @@ export default function About() {
           <a href="https://github.com/" target="_blank" rel="noreferrer">
             <FaGithub size={28} color="#ffffff" />
           </a>
-    
+
         </div>
-          <a
-            href="/Cristian Ezequiel Heredia CV.pdf.pdf"
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              marginTop: "10px",
-              padding: "10px 18px",
-              borderRadius: "8px",
-              border: "1px solid #e13838",
-              color: "#ffffff",
-              textDecoration: "none",
-              fontSize: "14px",
-              fontWeight: "bold",
-            }}
-          >
-            Ver CV
-          </a>
+        <a
+          href="/Cristian Ezequiel Heredia CV.pdf.pdf"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            marginTop: "10px",
+            padding: "10px 18px",
+            borderRadius: "8px",
+            border: "1px solid #e13838",
+            color: "#ffffff",
+            textDecoration: "none",
+            fontSize: "14px",
+            fontWeight: "bold",
+          }}
+        >
+          Ver CV
+        </a>
       </div>
     </section>
   );

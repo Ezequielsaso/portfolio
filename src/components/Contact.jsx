@@ -27,14 +27,14 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_w31pjkx",   // SERVICE_ID
-        "template_w6r0rc9",      // TEMPLATE_ID
+        "service_w31pjkx",
+        "template_w6r0rc9",
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        "R95A_3sNK0HESK9i4" // PUBLIC_KEY
+        "R95A_3sNK0HESK9i4"
       )
       .then(() => {
         setSubmitted(true);
@@ -64,14 +64,14 @@ export default function Contact() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#1e1e1e", 
+        backgroundColor: "#1e1e1e",
         color: "#fff",
         padding: "60px 20px",
       }}
     >
       <div
         style={{
-          backgroundColor: "rgb(54, 54, 54)", 
+          backgroundColor: "rgb(54, 54, 54)",
           padding: "30px",
           borderRadius: "12px",
           width: "100%",

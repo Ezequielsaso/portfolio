@@ -6,7 +6,7 @@ export default function Projects() {
         backgroundColor: "#1e1e1e",
         color: "#fff",
         padding: "80px 20px",
-           marginTop: "-120px",
+        marginTop: "-120px",
       }}
     >
       <h2
@@ -55,11 +55,11 @@ export default function Projects() {
           <p style={techStyle}>Java · Spring · MVC</p>
 
           <a
-          
+
             target="_blank"
             rel="noreferrer"
             style={linkStyleProgress}
-          
+
           >
             En progeso
           </a>
@@ -70,7 +70,7 @@ export default function Projects() {
 }
 
 const cardStyle = {
-  backgroundColor: "#2c2c2c", // card ligeramente más claro para contraste con el fondo
+  backgroundColor: "#2c2c2c",
   borderRadius: "12px",
   padding: "25px",
   transition: "transform 0.3s, box-shadow 0.3s",
