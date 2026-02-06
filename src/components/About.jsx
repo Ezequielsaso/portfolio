@@ -16,7 +16,6 @@ export default function About() {
         width: "100%",
       }}
     >
-      { }
       <div
         style={{
           maxWidth: "650px",
@@ -30,11 +29,12 @@ export default function About() {
         <h2 style={{ fontSize: "35px", fontWeight: "bold", marginBottom: "20px" }}>
           Sobre mí
         </h2>
+
         <p style={{ lineHeight: "1.6", fontSize: "16px" }}>
           Actualmente me encuentro formándome en desarrollo de software, con foco en backend utilizando
           Java y Spring Boot. He desarrollado proyectos personales donde implementé APIs REST, manejo
-          de DTOs, validaciones, persistencia con JPA, aplicando
-          buenas prácticas y patrón MVC (Controller, Service, Repository).
+          de DTOs, validaciones, persistencia con JPA, aplicando buenas prácticas y patrón MVC
+          (Controller, Service, Repository).
         </p>
 
         <div
@@ -46,29 +46,13 @@ export default function About() {
             flexWrap: "wrap",
           }}
         >
-          <div style={{ textAlign: "center" }}>
-            <FaJava size={34} color="#ffffff" />
-            <p style={{ fontSize: "12px", marginTop: "6px", color: "#e13838" }}>Java</p>
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <FaLeaf size={34} color="#ffffff" />
-            <p style={{ fontSize: "12px", marginTop: "6px", color: "#e13838" }}>Spring Boot</p>
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <FaDatabase size={34} color="#ffffff" />
-            <p style={{ fontSize: "12px", marginTop: "6px", color: "#e13838" }}>SQL / JPA</p>
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <FaReact size={34} color="#ffffff" />
-            <p style={{ fontSize: "12px", marginTop: "6px", color: "#e13838" }}>React</p>
-          </div>
-
+          <FaJava size={34} color="#ffffff" />
+          <FaLeaf size={34} color="#ffffff" />
+          <FaDatabase size={34} color="#ffffff" />
+          <FaReact size={34} color="#ffffff" />
         </div>
       </div>
 
-      { }
       <div
         style={{
           display: "flex",
@@ -77,21 +61,20 @@ export default function About() {
           gap: "16px",
         }}
       >
+
         <img
-          src="/fotoPerfil.png"
+          src={`${import.meta.env.BASE_URL}fotoPerfil.png`}
           alt="Foto de perfil"
           style={{
-            objectFit: "cover",
-            objectPosition: "center",
             width: "320px",
+            height: "320px",
             borderRadius: "150px",
             objectFit: "cover",
             border: "0.5px solid #e13838",
-            marginRight: "25px"
           }}
         />
 
-        { }
+
         <div style={{ display: "flex", gap: "20px" }}>
           <a
             href="https://www.linkedin.com/in/cristian-ezequiel-heredia-21b032230/"
@@ -101,13 +84,13 @@ export default function About() {
             <FaLinkedin size={28} color="#ffffff" />
           </a>
 
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Ezequielsaso" target="_blank" rel="noreferrer">
             <FaGithub size={28} color="#ffffff" />
           </a>
-
         </div>
+
         <a
-          href="/Cristian Ezequiel Heredia CV.pdf.pdf"
+          href="Cristian Ezequiel Heredia CV.pdf.pdf"
           target="_blank"
           rel="noreferrer"
           style={{

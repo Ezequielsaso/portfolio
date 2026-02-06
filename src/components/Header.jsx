@@ -37,7 +37,7 @@ export default function Header() {
         >
           <FaLinkedin size={24} color="#ffffff" />
         </a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">
+        <a href="https://github.com/Ezequielsaso" target="_blank" rel="noreferrer">
           <FaGithub size={24} color="#ffffff" />
         </a>
       </div>
