@@ -63,7 +63,7 @@ export default function About() {
       >
 
         <img
-          src={`${import.meta.env.BASE_URL}fotoPerfil.png`}
+          src={`${import.meta.env.BASE_URL}yo.JPG`}
           alt="Foto de perfil"
           style={{
             width: "320px",
@@ -90,7 +90,7 @@ export default function About() {
         </div>
 
         <a
-          href="Cristian Ezequiel Heredia CV.pdf.pdf"
+          href="Cristian Ezequiel Heredia CV.pdf"
           target="_blank"
           rel="noreferrer"
           style={{
