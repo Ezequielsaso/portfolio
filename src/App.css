@@ -1,0 +1,497 @@
+
+/* ========================================
+   1. Variables del diseño
+   ======================================== */
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e5e7eb;
+  background-color: #171717;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-fondo: #171717;
+  --color-superficie: #222222;
+  --color-tarjeta: #262626;
+  --color-borde: #383838;
+
+  --color-acento: #ef4444;
+  --color-acento-hover: #ff6262;
+
+  --color-texto: #e5e7eb;
+  --color-texto-secundario: #b8b8b8;
+
+  --radio: 14px;
+  --ancho-contenido: 1100px;
+}
+
+/* ========================================
+   2. Reinicio y configuración general
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-acento);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-acento-hover);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* El contenido ya no queda obligado a estar centrado
+   en una única columna estrecha. */
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+/* ========================================
+   3. Encabezados y textos
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  line-height: 1.2;
+  color: var(--color-texto);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--color-texto-secundario);
+  line-height: 1.75;
+}
+
+/* ========================================
+   4. Navegación
+   ======================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  padding: 16px 5%;
+
+  background-color: rgb(23 23 23 / 92%);
+  border-bottom: 1px solid var(--color-borde);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+header nav {
+  width: 100%;
+  max-width: var(--ancho-contenido);
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-link {
+  display: inline-block;
+
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+
+  opacity: 1;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-acento-hover);
+}
+
+/* ========================================
+   5. Secciones
+   ======================================== */
+
+section {
+  width: 100%;
+  max-width: var(--ancho-contenido);
+  margin-inline: auto;
+
+  padding: 80px 24px;
+  text-align: center;
+  scroll-margin-top: 80px;
+}
+
+section > p {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* Presentación principal */
+
+.hero {
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+
+  text-align: left;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-content p {
+  max-width: 600px;
+}
+
+.hero-image {
+  flex-shrink: 0;
+  width: min(280px, 32%);
+}
+
+.hero-image img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+
+  border: 2px solid var(--color-acento);
+  border-radius: 50%;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+/* ========================================
+   6. Botones
+   ======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 20px;
+
+  color: white;
+  background-color: var(--color-acento);
+
+  border: 1px solid var(--color-acento);
+  border-radius: 8px;
+
+  font-weight: 600;
+  text-align: center;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #dc3535;
+  border-color: #dc3535;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  color: var(--color-texto);
+  background-color: transparent;
+  border-color: var(--color-borde);
+}
+
+.btn-secondary:hover {
+  color: white;
+  background-color: var(--color-superficie);
+  border-color: var(--color-acento);
+}
+
+/* ========================================
+   7. Tarjetas y proyectos
+   ======================================== */
+
+.card {
+  padding: 28px;
+
+  color: var(--color-texto);
+  background-color: var(--color-tarjeta);
+
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: #5a3434;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgb(0 0 0 / 20%);
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  text-align: left;
+}
+
+.proyectos-grid .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.proyectos-grid .card p {
+  margin: 0;
+}
+
+.proyecto-imagen {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tecnologia {
+  padding: 5px 10px;
+
+  color: #fca5a5;
+  background-color: rgb(239 68 68 / 10%);
+
+  border: 1px solid rgb(239 68 68 / 25%);
+  border-radius: 6px;
+
+  font-size: 0.82rem;
+}
+
+.proyecto-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.proyecto-enlaces a {
+  font-weight: 600;
+}
+
+/* ========================================
+   8. Formularios
+   ======================================== */
+
+form {
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  text-align: left;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  color: var(--color-texto);
+  background-color: var(--color-superficie);
+
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-acento);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ========================================
+   9. Pie de página
+   ======================================== */
+
+footer {
+  padding: 28px 5%;
+
+  color: var(--color-texto-secundario);
+  text-align: center;
+
+  border-top: 1px solid var(--color-borde);
+}
+
+/* ========================================
+   10. Accesibilidad
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-acento-hover);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ========================================
+   11. Diseño adaptable a celulares
+   ======================================== */
+
+@media (max-width: 768px) {
+  header {
+    padding: 14px 5%;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+
+  section {
+    padding: 56px 20px;
+  }
+
+  .hero {
+    min-height: auto;
+    flex-direction: column-reverse;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 190px;
+  }
+
+  .hero-content p {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  header nav {
+    gap: 10px 14px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    letter-spacing: -0.5px;
+  }
+}
