@@ -1,6 +1,6 @@
 
 
-import "../technologies.css";
+import "../Technologies.css";
 
 import {
   FaJava,
