@@ -22,7 +22,7 @@ export default function About() {
             <span> Heredia</span>
           </h1>
 
-          <h2>Java · Spring Boot · APIs REST</h2>
+    
 
           <p className="about-description">
             Me estoy formando en desarrollo de software, con foco en
@@ -32,11 +32,7 @@ export default function About() {
             entre Controller, Service y Repository.
           </p>
 
-          <div className="about-skills">
-            <span><FaJava /> Java</span>
-            <span><FaLeaf /> Spring Boot</span>
-            <span><FaDatabase /> JPA / Datos</span>
-          </div>
+         
 
           <div className="about-actions">
             <a href="#projects" className="about-btn about-btn-primary">

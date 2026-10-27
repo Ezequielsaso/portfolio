@@ -45,7 +45,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} Cristian Ezequiel Heredia.
         </p>
-        <p>Hecho con React.</p>
+    
       </div>
     </footer>
   );

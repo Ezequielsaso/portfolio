@@ -41,6 +41,7 @@
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease, border-color 0.25s ease;
+  min-width: 0;
 }
 
 .card:hover {
@@ -78,6 +79,111 @@
   background-color: #40351e;
 }
 
+/* Vista previa del proyecto */
+.project-preview {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+}
+
+.preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  background-color: #333;
+}
+
+.preview-bar span {
+  display: block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #777;
+}
+
+.project-preview img.project-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 132px;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0;
+  border-radius: 0;
+  transition: transform 0.15s ease-out;
+  transform-origin: center center;
+  cursor: zoom-in;
+}
+
+.project-preview:hover img.project-image {
+  transform: scale(1.15);
+}
+
+/* Flechas de la galería en las tarjetas */
+.preview-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 32px;
+  height: 38px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.project-preview:hover .preview-flecha {
+  opacity: 1;
+}
+
+.project-preview .preview-flecha {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-preview:hover .preview-flecha {
+  pointer-events: auto;
+}
+
+.preview-flecha:hover {
+  background: #e13838;
+}
+
+.preview-anterior {
+  left: 8px;
+}
+
+.preview-siguiente {
+  right: 8px;
+}
+
+.preview-contador {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 3;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Tecnologías */
 .tecnologias {
   display: flex;
   flex-wrap: wrap;
@@ -94,6 +200,7 @@
   font-size: 0.8rem;
 }
 
+/* Enlaces */
 .proyecto-enlaces {
   padding-top: 18px;
   border-top: 1px solid #414141;
@@ -115,6 +222,91 @@
   font-size: 0.9rem;
 }
 
+/* Ventana de imagen ampliada */
+.lightbox {
+  position: fixed !important;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: zoom-out;
+  animation: aparecerLightbox 0.2s ease;
+}
+
+.lightbox-imagen {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 70vw !important;
+  max-height: 70vh !important;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.lightbox-cerrar {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  z-index: 100001;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-cerrar:hover {
+  color: #ff6666;
+}
+
+/* Flechas de la imagen ampliada */
+.lightbox-flecha {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100000;
+  width: 46px;
+  height: 56px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.lightbox-flecha:hover {
+  background: #e13838;
+}
+
+.lightbox-anterior {
+  left: 24px;
+}
+
+.lightbox-siguiente {
+  right: 24px;
+}
+
+@keyframes aparecerLightbox {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Adaptación a celulares */
 @media (max-width: 600px) {
   .proyectos {
     padding: 50px 16px;
@@ -126,5 +318,41 @@
 
   .card {
     padding: 22px;
+  }
+
+  .card:has(.project-preview) {
+    padding-top: 16px;
+  }
+
+  .preview-flecha {
+    opacity: 1;
+  }
+
+  .lightbox {
+    padding: 40px 12px;
+  }
+
+  .lightbox-imagen {
+    max-width: 90vw !important;
+    max-height: 70vh !important;
+  }
+
+  .lightbox-cerrar {
+    top: 10px;
+    right: 16px;
+  }
+
+  .lightbox-anterior {
+    left: 8px;
+  }
+
+  .lightbox-siguiente {
+    right: 8px;
+  }
+
+  .lightbox-flecha {
+    width: 36px;
+    height: 44px;
+    font-size: 22px;
   }
 }
